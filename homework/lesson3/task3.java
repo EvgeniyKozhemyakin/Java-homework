@@ -22,6 +22,7 @@ public class task3 {
             planetCounts.put(planet, count + 1);
         }
 
+        
         for (Map.Entry<String, Integer> entry : planetCounts.entrySet()) {
             String planet = entry.getKey();
             Integer count = entry.getValue();
