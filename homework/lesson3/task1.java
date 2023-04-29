@@ -8,16 +8,16 @@ import java.util.Scanner;
 public class task1 {
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите количество чисел: ");
-        int n = scanner.nextInt();
-        System.out.println("Введите числа:");
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Введите количество чисел: ");
+            int n = scanner.nextInt();
+            System.out.println("Введите числа:");
 
-        for (int i = 0; i < n; i++) {
-            int number = scanner.nextInt();
-            numbers.add(number);
+            for (int i = 0; i < n; i++) {
+                int number = scanner.nextInt();
+                numbers.add(number);
+            }
         }
-
         numbers.removeIf(number -> number % 2 == 0);
 
         System.out.println("Нечетные числа:");
