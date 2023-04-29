@@ -4,7 +4,6 @@ package homework.lesson4;
 
 import java.util.LinkedList;
 
-
 public class task1 {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
