@@ -25,41 +25,41 @@ public class Main {
 
     public static Map<String, Object> getFilterCriteria() {
         Map<String, Object> filterCriteria = new HashMap<>();
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Введите цифру, соответствующую необходимому критерию:");
+            System.out.println("1 - ОЗУ");
+            System.out.println("2 - Объем ЖД");
+            System.out.println("3 - Операционная система");
+            System.out.println("4 - Цвет");
 
-        System.out.println("Введите цифру, соответствующую необходимому критерию:");
-        System.out.println("1 - ОЗУ");
-        System.out.println("2 - Объем ЖД");
-        System.out.println("3 - Операционная система");
-        System.out.println("4 - Цвет");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-
-        switch (choice) {
-            case 1:
-                System.out.println("Введите минимальное значение ОЗУ:");
-                int minRam = scanner.nextInt();
-                filterCriteria.put("ram", minRam);
-                break;
-            case 2:
-                System.out.println("Введите минимальное значение объема ЖД:");
-                int minStorage = scanner.nextInt();
-                filterCriteria.put("storage", minStorage);
-                break;
-            case 3:
-                System.out.println("Введите операционную систему:");
-                String operatingSystem = scanner.nextLine();
-                filterCriteria.put("operatingSystem", operatingSystem);
-                break;
-            case 4:
-                System.out.println("Введите цвет:");
-                String color = scanner.nextLine();
-                filterCriteria.put("color", color);
-                break;
-            default:
-                System.out.println("Некорректный выбор.");
-                break;
+            switch (choice) {
+                case 1:
+                    System.out.println("Введите минимальное значение ОЗУ:");
+                    int minRam = scanner.nextInt();
+                    filterCriteria.put("ram", minRam);
+                    break;
+                case 2:
+                    System.out.println("Введите минимальное значение объема ЖД:");
+                    int minStorage = scanner.nextInt();
+                    filterCriteria.put("storage", minStorage);
+                    break;
+                case 3:
+                    System.out.println("Введите операционную систему:");
+                    String operatingSystem = scanner.nextLine();
+                    filterCriteria.put("operatingSystem", operatingSystem);
+                    break;
+                case 4:
+                    System.out.println("Введите цвет:");
+                    String color = scanner.nextLine();
+                    filterCriteria.put("color", color);
+                    break;
+                default:
+                    System.out.println("Некорректный выбор.");
+                    break;
+            }
         }
 
         return filterCriteria;
